@@ -14,19 +14,12 @@ function Button(props) {
     ...others
   } = props;
 
-  const getSizeClass = () => {
-    switch (size) {
+  const subClassess = (val) => {
+    switch (val) {
       case "sm":
         return "btn-small";
       case "lg":
         return "btn-large";
-      default:
-        return null;
-    }
-  };
-
-  const getColorClass = () => {
-    switch (color) {
       case "primary":
         return "btn-primary-color";
       case "secondary":
@@ -34,7 +27,7 @@ function Button(props) {
       case "danger":
         return "btn-danger-color";
       default:
-        return "btn-default-color";
+        return null;
     }
   };
 
@@ -43,15 +36,15 @@ function Button(props) {
       case "outline":
         return `button btn-outline ${disabledShadow && "disabled-shadow"} ${
           disabled && "disabled"
-        } ${size && getSizeClass()} ${color && getColorClass()}`;
+        } ${subClassess(size)} ${subClassess(color)}`;
       case "text":
         return `button btn-text ${disabledShadow && "disabled-shadow"}  ${
           disabled && "disabled"
-        } ${size && getSizeClass()} ${color && getColorClass()}`;
+        } ${subClassess(size)} ${subClassess(color)}`;
       default:
         return `button btn-default ${disabledShadow && "disabled-shadow"}  ${
           disabled && "disabled"
-        } ${size && getSizeClass()} ${getColorClass()}`;
+        } ${subClassess(color)} ${subClassess(size)}`;
     }
   };
   return (

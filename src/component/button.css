@@ -75,11 +75,6 @@
   padding: 11px 22px;
 }
 
-.btn-default-color {
-  background-color: var(--btn-default-clr);
-  color: var(--btn-default-text-clr);
-}
-
 .btn-primary-color {
   background-color: var(--btn-primary-clr);
 }
